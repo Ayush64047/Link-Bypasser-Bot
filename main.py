@@ -20,7 +20,7 @@ api_id = os.environ.get("ID", "")
 OWNER_ID = os.environ.get("OWNER_ID", "")
 ADMIN_LIST = [int(ch) for ch in (os.environ.get("ADMIN_LIST", f"{OWNER_ID}")).split()]
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "")
-PERMANENT_GROUP = os.environ.get("PERMANENT_GROUP", "-100")
+PERMANENT_GROUP = os.environ.get("PERMANENT_GROUP", "")
 GROUP_ID = [int(ch) for ch in (os.environ.get("GROUP_ID", f"{PERMANENT_GROUP}")).split()]
 UPDATES_CHANNEL = str(os.environ.get("UPDATES_CHANNEL", ""))
 app = Client("my_bot",api_id=api_id, api_hash=api_hash,bot_token=bot_token)  
@@ -110,8 +110,8 @@ async def send_start(client: pyrogram.client.Client, message: pyrogram.types.mes
 
                     disable_web_page_preview=True)
                 return
-    await app.send_message(message.chat.id, f"__👋 Hi **{message.from_user.mention}**, i am Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to Read More__",
-                           reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 Source Code 🌐", url="https://github.com/bipinkrish/Link-Bypasser-Bot")]]), reply_to_message_id=message.id)
+    await app.send_message(message.chat.id, f"__👋 Hello Dear **{message.from_user.mention}**, i am Link Bypasser Bot, just send me any supported links and i will you get you results.\nCheckout /help to check available sites__",
+                           reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌋 Updates🌋", url="https://t.me/mdisk_bots")]]), reply_to_message_id=message.id)
 
 
 # help command
